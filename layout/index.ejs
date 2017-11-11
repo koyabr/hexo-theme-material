@@ -5,6 +5,23 @@
         <%- partial('_partial/daily_pic') %>
         <%- partial('_partial/blog_info') %>
     <% } %>
+    <% if( (theme.scheme === 'Isolation') && (page.current === 1) && (is_home()) ) { %>
+        <!-- Search -->
+        <% if( theme.search.use === 'local' ) { %>
+            <!-- Local -->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
+                <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
+                    <i class="material-icons mdl-color-text--white" role="presentation">search</i>
+                </label>
+        
+                <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
+                    <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder="" style="margin-left: 28px"/>
+                    <label id="search-form-label" class="mdl-textfield__label" for="search" style="margin-left: 28px"></label>
+                </form>
+            </div>
+            <div id="local-search-result"></div>
+        <% } %>
+    <% } %>
     <div class="locate-thumbnail-symbol"></div>
 
     <!-- Pin on top -->
