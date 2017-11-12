@@ -18,9 +18,16 @@
 
     <% if(theme.scheme === 'Isolation') { %>
         <div class="post-content_wrapper">
-            <p class="post-title">
-                <%- page.title %>
-            </p>
+                <p class="post-title">
+                    <%- page.title %>
+                </p>
+                <!-- Post Tags -->
+                <%- list_tags(page.tags, {
+                    show_count: false,
+                    class: 'post_entry-tags',
+                    style: 'list',
+                    separator: ''
+                }) %>
             <%- page.content %>
             <% if (page.license || theme.license) { %>
                 <blockquote>
